@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recent Sales — Greg Leigh | Queensland Sotheby's Cleveland</title>
+  <meta name="description" content="Recent results from our Queensland Sotheby's Cleveland office — homes sold across the Redlands and bayside." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav__logo" href="index.html" aria-label="Greg Leigh — Queensland Sotheby's International Realty">
+        <img src="assets/qsir-logo-white.png" alt="Queensland Sotheby's International Realty"
+          onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'GREG LEIGH · SOTHEBY’S'}))" />
+      </a>
+      <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="nav__links" id="nav-links">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="sales.html">Recent Sales</a>
+        <a class="link" href="listings.html">Listings</a>
+        <a class="link" href="about.html">About</a>
+        <a class="link" href="testimonials.html">Testimonials</a>
+        <a class="btn btn--gold" href="https://redlandshomevalue.com.au">Free Appraisal</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero hero--page">
+    <div class="hero__inner">
+      <div>
+        <p class="eyebrow">Recent results</p>
+        <h1>Homes we've <em>sold</em></h1>
+        <p class="hero__sub">Recent results from our Queensland Sotheby's Cleveland office, across the Redlands and bayside.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="wrap">
+      <div class="filters">
+        <button class="chip is-active" data-filter="all">All suburbs</button>
+        <button class="chip" data-filter="Cleveland">Cleveland</button>
+        <button class="chip" data-filter="Victoria Point">Victoria Point</button>
+        <button class="chip" data-filter="Thornlands">Thornlands</button>
+        <button class="chip" data-filter="Redland Bay">Redland Bay</button>
+        <button class="chip" data-filter="Capalaba">Capalaba</button>
+      </div>
+
+      <div class="grid">
+        <!-- Repeat this card per sold home. Swap the placeholder for a real photo:
+             <div class="card__media"><span class="card__badge card__badge--sold">Sold</span><img src="assets/homes/xyz.jpg" alt=""></div> -->
+        <article class="card" data-suburb="Redland Bay">
+          <a class="card__media" href="https://brisbane.queenslandsothebysrealty.com/1a-bay-street-redland-bay-qld-4165-4035" target="_blank" rel="noopener">
+            <span class="card__badge card__badge--sold">Sold</span>
+            <img src="https://agentboxcdn.com.au/clients-data/8233/public_html/media/lt/1/1P5554/177034334738657621-rsd.jpg" alt="1A Bay Street, Redland Bay" loading="lazy" />
+          </a>
+          <div class="card__body"><div class="card__suburb">Redland Bay</div><div class="card__result">Sold under the hammer</div>
+            <div class="card__meta"><span>6 Bed</span><span>5 Bath</span><span>6 Car</span><span>522 m²</span></div>
+            <p class="card__desc">A landmark three-level waterfront residence with lift, circular staircase and heated lap pool.</p>
+            <div class="card__attr"><b>Queensland Sotheby's Cleveland</b> · Sold by Jan Goetze</div></div>
+        </article>
+        <article class="card" data-suburb="Victoria Point">
+          <div class="card__media"><span class="card__badge card__badge--sold">Sold</span><div class="card__ph">Home photo<small>Add photo</small></div></div>
+          <div class="card__body"><div class="card__suburb">Victoria Point</div><div class="card__result">Sold</div>
+            <div class="card__meta"><span>3 Bed</span><span>2 Bath</span><span>1 Car</span></div>
+            <p class="card__desc">One-line result / highlight goes here.</p>
+            <div class="card__attr"><b>Queensland Sotheby's Cleveland</b> · Sold by [agent]</div></div>
+        </article>
+        <article class="card" data-suburb="Thornlands">
+          <div class="card__media"><span class="card__badge card__badge--sold">Sold</span><div class="card__ph">Home photo<small>Add photo</small></div></div>
+          <div class="card__body"><div class="card__suburb">Thornlands</div><div class="card__result">Sold</div>
+            <div class="card__meta"><span>5 Bed</span><span>3 Bath</span><span>2 Car</span></div>
+            <p class="card__desc">One-line result / highlight goes here.</p>
+            <div class="card__attr"><b>Queensland Sotheby's Cleveland</b> · Sold by [agent]</div></div>
+        </article>
+        <article class="card" data-suburb="Redland Bay">
+          <div class="card__media"><span class="card__badge card__badge--sold">Sold</span><div class="card__ph">Home photo<small>Add photo</small></div></div>
+          <div class="card__body"><div class="card__suburb">Redland Bay</div><div class="card__result">Sold</div>
+            <div class="card__meta"><span>4 Bed</span><span>2 Bath</span><span>2 Car</span></div>
+            <p class="card__desc">One-line result / highlight goes here.</p>
+            <div class="card__attr"><b>Queensland Sotheby's Cleveland</b> · Sold by [agent]</div></div>
+        </article>
+        <article class="card" data-suburb="Capalaba">
+          <div class="card__media"><span class="card__badge card__badge--sold">Sold</span><div class="card__ph">Home photo<small>Add photo</small></div></div>
+          <div class="card__body"><div class="card__suburb">Capalaba</div><div class="card__result">Sold</div>
+            <div class="card__meta"><span>3 Bed</span><span>1 Bath</span><span>1 Car</span></div>
+            <p class="card__desc">One-line result / highlight goes here.</p>
+            <div class="card__attr"><b>Queensland Sotheby's Cleveland</b> · Sold by [agent]</div></div>
+        </article>
+        <article class="card" data-suburb="Cleveland">
+          <div class="card__media"><span class="card__badge card__badge--sold">Sold</span><div class="card__ph">Home photo<small>Add photo</small></div></div>
+          <div class="card__body"><div class="card__suburb">Cleveland</div><div class="card__result">Sold</div>
+            <div class="card__meta"><span>4 Bed</span><span>3 Bath</span><span>2 Car</span></div>
+            <p class="card__desc">One-line result / highlight goes here.</p>
+            <div class="card__attr"><b>Queensland Sotheby's Cleveland</b> · Sold by [agent]</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap"><h2>Thinking your street could be next?</h2>
+      <p>Find out what your home could achieve — a free, no-obligation appraisal from a local expert.</p>
+      <a class="btn btn--gold" href="https://redlandshomevalue.com.au">Get your free appraisal</a></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <img src="assets/qsir-logo-white.png" alt="Queensland Sotheby's International Realty" class="footer__logo"
+        onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback--rev',textContent:'QUEENSLAND SOTHEBY’S INTERNATIONAL REALTY'}))" />
+      <p class="footer__agency">Greg Leigh · Queensland Sotheby's International Realty, Redlands QLD</p>
+      <p class="footer__fine"><a href="tel:+61466805992">0466 805 992</a> · <a href="mailto:greg.leigh@qldsir.com">greg.leigh@qldsir.com</a></p>
+      <p class="footer__fine">Each office is independently owned and operated. Licensed real estate agent (QLD). <a href="https://redlandshomevalue.com.au/#privacy">Privacy policy</a> · By submitting an appraisal request you agree to be contacted about your appraisal.</p>
+      <p class="footer__copy">&copy; <span id="year">2026</span> Greg Leigh. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>
