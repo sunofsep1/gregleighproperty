@@ -239,3 +239,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--navy);line-height:
 .lb__caption{position:absolute;bottom:1.3rem;left:0;right:0;text-align:center;color:#e7ddc7;font-size:.86rem;letter-spacing:.04em}
 .lb__caption .count{color:var(--gold);font-weight:700}
 @media(max-width:640px){.lb__nav{width:42px;height:42px;font-size:1.1rem}.lb__close{top:.6rem;right:.6rem}}
+
+/* Two-up card grid (home "Now marketing" section) */
+.grid--2{grid-template-columns:repeat(2,1fr);max-width:880px;margin-left:auto;margin-right:auto}
+.grid--2 .card__body .btn{margin-top:.6rem}
+@media(max-width:640px){.grid--2{grid-template-columns:1fr}}
