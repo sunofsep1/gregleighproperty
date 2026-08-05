@@ -1,0 +1,60 @@
+name: Fetch St Johns assets
+# One-shot: pulls the St Johns Pullenvale listing photos from the shared
+# Google Drive folder, optimises them for web, commits to assets/homes/stjohns/.
+# Safe to delete this file once the photos are in the repo.
+on:
+  push:
+    paths:
+      - '.github/workflows/fetch-stjohns-assets.yml'
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure ImageMagick
+        run: command -v convert >/dev/null || (sudo apt-get update && sudo apt-get install -y imagemagick)
+      - name: Download and optimise
+        run: |
+          set -e
+          mkdir -p assets/homes/stjohns
+          map="01=1oKvmm6pwQgQD9hKFWcg5MOCg_xe91toQ
+          02=1XfF56fbr4gN_0fXbQar8ai-FFluqCOlG
+          03=1mOWf6jKbnjqiePplKLtqSvNOk2IwQ4Tn
+          04=1CelZGJG3NZE4JY7h_4FDCJPA9MS4sv9L
+          05=1j6-9uO8AzQHIx8be8QiLT_iOZxnf0J-8
+          06=174A8zS3CZxxb_yQIPFGyx50ZX48tDcV-
+          07=1JVMzZR4s9gjmaafDCcqkmUvBRGKEE3x8
+          08=1n99_BWD_P5UTTWJlEvVJd4mMn0NjRJ2b
+          09=1N4ud3dUhllIoKmTHxzYqbOOsJnPlQC-U
+          10=1Gzts0gUKxLQ951Y8KWcFwfD2X1VKlLGP
+          11=1e1lyl5Zqya9_26pMsZcrtgWWcALChA4E
+          12=1SJjZCRorTzkKjgjRgQV3CxdDXsV4pbQd
+          13=14-ifPbgT1XQ5rZKeF8fDOfU0nuJHIjNS
+          14=1LrwW19LdHb3D8xNPDRd4ZfF5gN_inHlH
+          15=1lnUZHZQ9hToqm4rN15QkpC3DHs-K6Y-e
+          16=1C4LnKTEvflkcrz73jl1gZh2S7anuyuC1"
+          echo "$map" | while IFS='=' read -r n id; do
+            n=$(echo "$n" | tr -d ' ')
+            [ -z "$n" ] && continue
+            curl -fsSL "https://drive.google.com/uc?export=download&id=${id}" -o raw.jpg
+            t=$(file -b --mime-type raw.jpg)
+            if [ "$t" != "image/jpeg" ]; then
+              echo "primary endpoint gave $t for ${n}, retrying via usercontent"
+              curl -fsSL "https://drive.usercontent.google.com/download?id=${id}&export=download" -o raw.jpg
+              t=$(file -b --mime-type raw.jpg)
+            fi
+            if [ "$t" != "image/jpeg" ]; then echo "::error::${n} is not a jpeg (${t}) — is the Drive folder link-shared?"; exit 1; fi
+            convert raw.jpg -auto-orient -resize '1600x1600>' -quality 82 -strip "assets/homes/stjohns/${n}.jpg"
+            echo "done ${n}.jpg ($(stat -c%s assets/homes/stjohns/${n}.jpg) bytes)"
+          done
+          rm -f raw.jpg
+          ls -la assets/homes/stjohns/
+      - name: Commit photos
+        run: |
+          git config user.name "stjohns-assets"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/homes/stjohns
+          git commit -m "Add St Johns Pullenvale listing photos (optimised)"
+          git push
