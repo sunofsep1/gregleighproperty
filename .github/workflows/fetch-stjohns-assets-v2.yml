@@ -1,0 +1,93 @@
+name: Fetch St Johns assets v2
+# One-shot: pulls ALL St Johns Pullenvale photos from the shared Google Drive
+# folder that are NOT already in the repo (16 known ids from the first run),
+# optimises them for web, numbers them 17+, appends matching thumb buttons to
+# the gallery in listings.html, commits. Safe to delete this file afterwards.
+on:
+  push:
+    paths:
+      - '.github/workflows/fetch-stjohns-assets-v2.yml'
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure ImageMagick
+        run: command -v convert >/dev/null || (sudo apt-get update && sudo apt-get install -y imagemagick)
+      - name: Discover new photos in Drive folder
+        run: |
+          set -e
+          curl -fsSL "https://drive.google.com/embeddedfolderview?id=1abtJ_psPxUbNfmmhu9-dcL79ZJhAIXm6#list" -o folder.html
+          python3 - <<'PY'
+          import re
+          html = open('folder.html', encoding='utf-8', errors='ignore').read()
+          known = set("""1oKvmm6pwQgQD9hKFWcg5MOCg_xe91toQ 1XfF56fbr4gN_0fXbQar8ai-FFluqCOlG 1mOWf6jKbnjqiePplKLtqSvNOk2IwQ4Tn 1CelZGJG3NZE4JY7h_4FDCJPA9MS4sv9L 1j6-9uO8AzQHIx8be8QiLT_iOZxnf0J-8 174A8zS3CZxxb_yQIPFGyx50ZX48tDcV- 1JVMzZR4s9gjmaafDCcqkmUvBRGKEE3x8 1n99_BWD_P5UTTWJlEvVJd4mMn0NjRJ2b 1N4ud3dUhllIoKmTHxzYqbOOsJnPlQC-U 1Gzts0gUKxLQ951Y8KWcFwfD2X1VKlLGP 1e1lyl5Zqya9_26pMsZcrtgWWcALChA4E 1SJjZCRorTzkKjgjRgQV3CxdDXsV4pbQd 14-ifPbgT1XQ5rZKeF8fDOfU0nuJHIjNS 1LrwW19LdHb3D8xNPDRd4ZfF5gN_inHlH 1lnUZHZQ9hToqm4rN15QkpC3DHs-K6Y-e 1C4LnKTEvflkcrz73jl1gZh2S7anuyuC1""".split())
+          pairs = re.findall(r'id="entry-([\w-]+)".*?flip-entry-title">([^<]+)<', html, re.S)
+          seen = set()
+          rows = []
+          for fid, name in pairs:
+              name = name.strip()
+              if fid in known or fid in seen: continue
+              if not re.search(r'\.jpe?g$', name, re.I): continue
+              seen.add(fid)
+              rows.append((name, fid))
+          rows.sort()
+          with open('new_photos.txt', 'w') as f:
+              for name, fid in rows:
+                  f.write(f"{fid}\t{name}\n")
+          print(f"found {len(pairs)} entries, {len(rows)} NEW jpegs:")
+          for name, fid in rows: print(" ", name, fid)
+          PY
+          [ -s new_photos.txt ] || { echo "::error::no new photos found — folder listing empty or all known"; exit 1; }
+      - name: Download and optimise
+        run: |
+          set -e
+          n=17
+          while IFS=$'\t' read -r id name; do
+            [ -z "$id" ] && continue
+            num=$(printf '%02d' "$n")
+            curl -fsSL "https://drive.google.com/uc?export=download&id=${id}" -o raw.jpg
+            t=$(file -b --mime-type raw.jpg)
+            if [ "$t" != "image/jpeg" ]; then
+              echo "primary endpoint gave $t for ${num} (${name}), retrying via usercontent"
+              curl -fsSL "https://drive.usercontent.google.com/download?id=${id}&export=download" -o raw.jpg
+              t=$(file -b --mime-type raw.jpg)
+            fi
+            if [ "$t" != "image/jpeg" ]; then echo "::error::${num} (${name}) is not a jpeg (${t})"; exit 1; fi
+            convert raw.jpg -auto-orient -resize '1600x1600>' -quality 82 -strip "assets/homes/stjohns/${num}.jpg"
+            echo "done ${num}.jpg <- ${name} ($(stat -c%s assets/homes/stjohns/${num}.jpg) bytes)"
+            n=$((n+1))
+          done < new_photos.txt
+          rm -f raw.jpg folder.html
+          echo "last=$((n-1))" >> "$GITHUB_ENV"
+          ls -la assets/homes/stjohns/
+      - name: Extend gallery in listings.html
+        run: |
+          python3 - <<'PY'
+          import re
+          html = open('listings.html', encoding='utf-8').read()
+          nums = []
+          with open('new_photos.txt') as f:
+              n = 17
+              for line in f:
+                  if line.strip(): nums.append(n); n += 1
+          btns = "\n".join(
+              f'<button class="thumb" data-type="image" data-src="assets/homes/stjohns/{num:02d}.jpg" aria-label="Photo {num}"><img src="assets/homes/stjohns/{num:02d}.jpg" alt="&quot;St Johns&quot;, Pullenvale — estate photo {num}" loading="lazy" /></button>'
+              for num in nums)
+          # insert after the LAST existing stjohns thumb button (16.jpg)
+          marker = re.search(r'(<button class="thumb"[^>]*data-src="assets/homes/stjohns/16\.jpg".*?</button>)', html, re.S)
+          assert marker, "16.jpg thumb not found"
+          html = html.replace(marker.group(1), marker.group(1) + "\n" + btns, 1)
+          open('listings.html', 'w', encoding='utf-8').write(html)
+          print(f"inserted {len(nums)} thumbs (17..{nums[-1] if nums else '-'})")
+          PY
+      - name: Commit
+        run: |
+          git config user.name "stjohns-assets"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/homes/stjohns listings.html
+          git commit -m "St Johns gallery: add remaining listing photos"
+          git push
+          rm -f new_photos.txt
