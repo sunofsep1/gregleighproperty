@@ -148,68 +148,6 @@ style="grid-column:1 / -1;height:50px;border:none;border-radius:2px;background:#
 </form>
 </div>
 </article>
-<script>
-(function () {
-var openBtn = document.getElementById("ri-open");
-var box = document.getElementById("register-stjohns");
-if (openBtn && box) {
-openBtn.addEventListener("click", function (e) {
-e.preventDefault();
-box.style.display = "grid";
-box.scrollIntoView({ behavior: "smooth", block: "center" });
-setTimeout(function () { var f = box.querySelector("input"); if (f) f.focus({ preventScroll: true }); }, 500);
-});
-}
-var form = document.getElementById("ri-form");
-if (!form) return;
-var ENDPOINT = "https://redlandshomevalue.com.au/.netlify/functions/register-interest";
-form.addEventListener("submit", function (e) {
-e.preventDefault();
-var msg = document.getElementById("ri-msg");
-var val = function (n) { return (form[n] && form[n].value ? form[n].value : "").trim(); };
-var email = val("ri_email"), phone = val("ri_phone");
-if (!val("ri_first_name") || !val("ri_last_name")) {
-return show("Please add your first and last name.");
-}
-if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-return show("Please enter a valid email address.");
-}
-if (phone.replace(/\D/g, "").length < 8) {
-return show("Please enter a valid mobile number.");
-}
-if (msg) msg.hidden = true;
-var btn = form.querySelector("button[type=submit]");
-if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
-fetch(ENDPOINT, {
-method: "POST",
-headers: { "Content-Type": "application/json" },
-body: JSON.stringify({
-first_name: val("ri_first_name"),
-last_name: val("ri_last_name"),
-email: email,
-phone: phone,
-suburb: val("ri_suburb"),
-postcode: val("ri_postcode"),
-listing: form.getAttribute("data-listing") || "",
-company: form.company ? form.company.value : ""
-})
-})
-.then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); })
-.then(function () {
-var done = document.createElement("p");
-done.style.cssText = "margin:8px 0 0;font-size:17px;font-weight:600;color:#B99A50;";
-done.innerHTML = "✓&nbsp; Thanks &mdash; you&rsquo;re registered. Greg will be in touch personally.";
-form.replaceWith(done);
-})
-.catch(function () {
-if (btn) { btn.disabled = false; btn.textContent = "Register my interest"; }
-show("Sorry — that didn’t go through. Please try again, or call Greg on 0466 805 992.");
-});
-function show(t) { if (msg) { msg.textContent = t; msg.hidden = false; } }
-});
-})();
-</script>
-
 <!-- 9 Wilohurst Drive, Redland Bay -->
 <article class="feature" id="wilohurst">
 <div class="feature__media">
@@ -372,6 +310,67 @@ onerror="this.replaceWith(Object.assign(document.createElement('span'),{classNam
 <div class="lb__caption" id="lb-caption"></div>
 </div>
 
+<script>
+(function () {
+var openBtn = document.getElementById("ri-open");
+var box = document.getElementById("register-stjohns");
+if (openBtn && box) {
+openBtn.addEventListener("click", function (e) {
+e.preventDefault();
+box.style.display = "grid";
+box.scrollIntoView({ behavior: "smooth", block: "center" });
+setTimeout(function () { var f = box.querySelector("input"); if (f) f.focus({ preventScroll: true }); }, 500);
+});
+}
+var form = document.getElementById("ri-form");
+if (!form) return;
+var ENDPOINT = "https://redlandshomevalue.com.au/.netlify/functions/register-interest";
+form.addEventListener("submit", function (e) {
+e.preventDefault();
+var msg = document.getElementById("ri-msg");
+var val = function (n) { return (form[n] && form[n].value ? form[n].value : "").trim(); };
+var email = val("ri_email"), phone = val("ri_phone");
+if (!val("ri_first_name") || !val("ri_last_name")) {
+return show("Please add your first and last name.");
+}
+if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+return show("Please enter a valid email address.");
+}
+if (phone.replace(/\D/g, "").length < 8) {
+return show("Please enter a valid mobile number.");
+}
+if (msg) msg.hidden = true;
+var btn = form.querySelector("button[type=submit]");
+if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+fetch(ENDPOINT, {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+first_name: val("ri_first_name"),
+last_name: val("ri_last_name"),
+email: email,
+phone: phone,
+suburb: val("ri_suburb"),
+postcode: val("ri_postcode"),
+listing: form.getAttribute("data-listing") || "",
+company: form.company ? form.company.value : ""
+})
+})
+.then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); })
+.then(function () {
+var done = document.createElement("p");
+done.style.cssText = "margin:8px 0 0;font-size:17px;font-weight:600;color:#B99A50;";
+done.innerHTML = "✓&nbsp; Thanks &mdash; you&rsquo;re registered. Greg will be in touch personally.";
+form.replaceWith(done);
+})
+.catch(function () {
+if (btn) { btn.disabled = false; btn.textContent = "Register my interest"; }
+show("Sorry — that didn’t go through. Please try again, or call Greg on 0466 805 992.");
+});
+function show(t) { if (msg) { msg.textContent = t; msg.hidden = false; } }
+});
+})();
+</script>
 <script src="assets/site.js" defer></script>
 <script src="assets/gallery.js" defer></script>
 </body>
