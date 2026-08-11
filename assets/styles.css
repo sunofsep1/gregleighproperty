@@ -244,3 +244,29 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--navy);line-height:
 .grid--2{grid-template-columns:repeat(2,1fr);max-width:880px;margin-left:auto;margin-right:auto}
 .grid--2 .card__body .btn{margin-top:.6rem}
 @media(max-width:640px){.grid--2{grid-template-columns:1fr}}
+
+/* ---- Sold-card refresh: address-led hierarchy, warmer contrast ---- */
+.card{border-color:#e8e0cf}
+.card:hover{box-shadow:0 16px 38px rgba(23,40,73,.14);transform:translateY(-2px)}
+.card__media{overflow:hidden}
+.card__media img{transition:transform .5s ease}
+.card:hover .card__media img{transform:scale(1.04)}
+.card__body{padding:1.15rem 1.25rem 1.25rem}
+.card__suburb{font-family:var(--sans);font-weight:700;font-size:.74rem;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--gold);line-height:1.2}
+.card__addr{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--navy);
+  line-height:1.14;margin:.28rem 0 .45rem;letter-spacing:-.01em}
+.card__result{font-weight:700;font-size:1.02rem;color:var(--navy);margin:0 0 .75rem;
+  display:flex;align-items:baseline;flex-wrap:wrap;gap:.1rem}
+.card__price{font-family:var(--serif);font-size:1.22rem;font-weight:700;color:var(--navy)}
+.card__dot{color:var(--gold);margin:0 .5rem;font-weight:700}
+.card__date{font-weight:600;font-size:.85rem;color:#6a7383}
+.card__meta{display:flex;gap:1.05rem;font-size:.88rem;font-weight:600;color:#3f4859;
+  border-top:1px solid #efe7d7;padding-top:.7rem;margin-top:0;flex-wrap:wrap}
+.card__meta b{font-family:var(--serif);font-size:1.02rem;color:var(--navy);font-weight:700}
+.card__attr{font-size:.76rem;color:#6a7383;border-top:1px solid #efe7d7;padding-top:.65rem;margin-top:.75rem}
+.card__attr b{color:var(--navy);font-weight:600}
+.sales-note{max-width:820px;margin:2.2rem auto 0;font-size:.92rem;color:#4c5566;
+  border-left:3px solid var(--gold);padding:.15rem 0 .15rem 1.1rem;line-height:1.65}
+.sales-note b{color:var(--navy)}
+.sales-note a{color:var(--navy);font-weight:700}
