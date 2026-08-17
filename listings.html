@@ -44,13 +44,60 @@
 <p class="eyebrow center" style="text-align:center">Now marketing</p>
 <h2 class="center" style="text-align:center;font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:2.4rem">Featured listings</h2>
 
-<!-- Coming soon placeholder -->
-<article class="feature" id="coming-soon" style="display:block">
-<div style="background:#172849;border-radius:8px;padding:clamp(40px,6vw,72px) clamp(24px,4vw,56px);text-align:center;">
-<p style="margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#B99A50;">Coming soon</p>
-<h3 style="margin:0 0 12px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(26px,3.2vw,36px);color:#fff;line-height:1.15;">A new listing is on its way</h3>
-<p style="margin:0 auto 22px;max-width:560px;font-size:16px;line-height:1.6;color:#D8D0BE;">Details are being finalised now. Want the first look before it hits the portals? Get in touch and I&rsquo;ll make sure you hear about it first.</p>
-<a href="tel:0466805992" style="display:inline-block;padding:13px 26px;border-radius:2px;font-weight:700;text-decoration:none;font-size:15px;background:#B99A50;color:#172849;">Call Greg &mdash; 0466 805 992</a>
+<!-- Freshwater Street, Thornlands — coming soon + VIP twilight register -->
+<article class="feature" id="freshwater">
+
+<div class="feature__stage" data-feature="freshwater">
+<span class="feature__badge2">Coming Soon &middot; V.I.P. Twilight Viewing</span>
+<img class="feature__hero" src="assets/homes/freshwater/hero.png" alt="Coming soon — townhouse, Freshwater Street, Thornlands. V.I.P. twilight viewing by invitation." />
+</div>
+
+<div class="feature__info">
+<div class="feature__suburb">Thornlands</div>
+<h3 class="feature__addr">Freshwater Street</h3>
+<div class="feature__status">Coming Soon <span class="dot">&middot;</span> V.I.P. Twilight Viewing</div>
+<div class="feature__specs">
+<span class="spec"><b>Twilight</b> <span>Viewing</span></span>
+<span class="spec"><b>By</b> <span>Invitation</span></span>
+<span class="spec"><b>Styled</b> <span>For market</span></span>
+<span class="spec"><b>First</b> <span>Look</span></span>
+</div>
+<p class="feature__desc">Something special is coming to one of Thornlands&rsquo; most convenient pockets. This townhouse is being professionally styled and photographed right now ahead of a premiere portal campaign &mdash; and before it launches anywhere, we&rsquo;re opening the doors for one evening only. The V.I.P. twilight viewing is strictly by invitation: register below and you&rsquo;ll receive the private invite with date and time, plus the price guide and full photography the moment they&rsquo;re released. You see it first &mdash; before the portals do.</p>
+<div class="feature__actions">
+<a class="btn btn--navy" href="#register-freshwater" id="ri-open">Register for the V.I.P. viewing</a>
+<a class="btn btn--outline" href="tel:0466805992">Call Greg &mdash; 0466 805 992</a>
+</div>
+<div class="feature__attr"><b>Queensland Sotheby's International Realty</b> &middot; Marketed by Greg Leigh</div>
+</div>
+
+<!-- Register your interest — Freshwater (full-width band inside the card) -->
+<div id="register-freshwater" style="display:none;grid-column:1 / -1;background:#172849;padding:clamp(28px,4vw,44px);border-radius:8px;font-family:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;box-shadow:0 18px 40px rgba(23,40,73,.14);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3vw,44px);align-items:center;">
+<div>
+<p style="margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B99A50;">V.I.P. Twilight Viewing</p>
+<h3 style="margin:0 0 6px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(24px,2.6vw,30px);color:#fff;line-height:1.15;">Townhouse &mdash; Freshwater Street, Thornlands</h3>
+<p style="margin:0 0 12px;font-size:15px;line-height:1.55;color:#D8D0BE;">Register and you&rsquo;ll receive the private invitation to the twilight viewing &mdash; date, time and details &mdash; plus the price guide and photography before the public launch.</p>
+<p style="margin:0;font-size:13px;color:#8E97AC;">Your details come straight to Greg Leigh &mdash; no third parties, no spam.</p>
+</div>
+<form id="ri-form" data-listing="Townhouse, Freshwater Street Thornlands (VIP twilight list)" novalidate
+style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+<input type="text" name="ri_first_name" placeholder="First name" autocomplete="given-name" required
+style="height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;" />
+<input type="text" name="ri_last_name" placeholder="Last name" autocomplete="family-name" required
+style="height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;" />
+<input type="tel" name="ri_phone" placeholder="Mobile" autocomplete="tel" inputmode="tel" required
+style="height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;" />
+<input type="email" name="ri_email" placeholder="Email address" autocomplete="email" inputmode="email" required
+style="height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;" />
+<input type="text" name="ri_suburb" placeholder="Suburb you live in" autocomplete="address-level2" required
+style="height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;" />
+<input type="text" name="ri_postcode" placeholder="Postcode" autocomplete="postal-code" inputmode="numeric" required
+style="height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;" />
+<input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0;" />
+<p id="ri-msg" hidden style="grid-column:1 / -1;margin:0;font-size:14px;color:#F0C9A0;"></p>
+<button type="submit" class="btn"
+style="grid-column:1 / -1;height:52px;border:0;border-radius:2px;background:#B99A50;color:#172849;font-size:16px;font-weight:700;cursor:pointer;">Register for the twilight viewing</button>
+<p style="grid-column:1 / -1;margin:0;font-size:12px;line-height:1.5;color:#8E97AC;">By registering you agree to be contacted about this property. Details are never shared.</p>
+</form>
 </div>
 </article>
 <!-- 9 Wilohurst Drive, Redland Bay -->
@@ -217,7 +264,7 @@
 <script>
 (function () {
 var openBtn = document.getElementById("ri-open");
-var box = document.getElementById("register-stjohns");
+var box = document.getElementById("register-freshwater");
 if (openBtn && box) {
 openBtn.addEventListener("click", function (e) {
 e.preventDefault();
