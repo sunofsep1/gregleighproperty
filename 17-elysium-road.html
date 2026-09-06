@@ -136,6 +136,40 @@ style="grid-column:1 / -1;height:48px;padding:0 14px;border:1px solid rgba(255,2
 <option value="in_progress" style="color:#172849;">Finance application in progress</option>
 <option value="not_started" style="color:#172849;">Haven't started finance yet</option>
 </select>
+<select name="ri_buyer_type" required
+style="grid-column:1 / -1;height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;">
+<option value="" disabled selected style="color:#172849;">Are you buying to live in it, or as an investment?</option>
+<option value="owner_occupier" style="color:#172849;">Owner-occupier &mdash; to live in</option>
+<option value="investor" style="color:#172849;">Investor</option>
+</select>
+<select name="ri_selling_first" required
+style="grid-column:1 / -1;height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;">
+<option value="" disabled selected style="color:#172849;">Do you need to sell a property first?</option>
+<option value="no" style="color:#172849;">No &mdash; ready to proceed</option>
+<option value="yes_listed" style="color:#172849;">Yes &mdash; already selling / listed</option>
+<option value="yes_not_started" style="color:#172849;">Yes &mdash; haven't started selling yet</option>
+</select>
+<select name="ri_pest_status" required
+style="grid-column:1 / -1;height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;">
+<option value="" disabled selected style="color:#172849;">Building &amp; pest inspection?</option>
+<option value="completed" style="color:#172849;">Already completed</option>
+<option value="booked" style="color:#172849;">Booked / in progress</option>
+<option value="need_help" style="color:#172849;">Need help arranging one</option>
+<option value="not_started" style="color:#172849;">Haven't started</option>
+</select>
+<select name="ri_solicitor_ready" required
+style="grid-column:1 / -1;height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;">
+<option value="" disabled selected style="color:#172849;">Solicitor or conveyancer ready?</option>
+<option value="yes" style="color:#172849;">Yes, ready to go</option>
+<option value="no" style="color:#172849;">No, still need one</option>
+<option value="not_sure" style="color:#172849;">Not sure yet</option>
+</select>
+<select name="ri_bidding_for" required
+style="grid-column:1 / -1;height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;">
+<option value="" disabled selected style="color:#172849;">Who are you bidding for?</option>
+<option value="self" style="color:#172849;">Bidding for myself</option>
+<option value="someone_else" style="color:#172849;">On behalf of someone else (e.g. buyer's agent, family member)</option>
+</select>
 <label style="grid-column:1 / -1;display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;color:#D8D0BE;cursor:pointer;">
 <input type="checkbox" name="ri_unconditional_ack" required style="margin-top:3px;width:16px;height:16px;flex-shrink:0;" />
 <span>I understand 17 Elysium Road is selling via unconditional auction &mdash; no finance, building or pest conditions can be included in a bid.</span>
@@ -188,6 +222,11 @@ document.querySelectorAll("form.ri-form").forEach(function (form) {
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return show("Please enter a valid email address.");
     if (phone.replace(/\D/g, "").length < 8) return show("Please enter a valid mobile number.");
     if (form.ri_finance_status && !val("ri_finance_status")) return show("Please let us know how your finance is placed.");
+    if (form.ri_buyer_type && !val("ri_buyer_type")) return show("Please let us know if you're buying to live in it or as an investment.");
+    if (form.ri_selling_first && !val("ri_selling_first")) return show("Please let us know if you need to sell a property first.");
+    if (form.ri_pest_status && !val("ri_pest_status")) return show("Please let us know where you're at with a building & pest inspection.");
+    if (form.ri_solicitor_ready && !val("ri_solicitor_ready")) return show("Please let us know if you have a solicitor or conveyancer ready.");
+    if (form.ri_bidding_for && !val("ri_bidding_for")) return show("Please let us know who you're bidding for.");
     if (form.ri_unconditional_ack && !form.ri_unconditional_ack.checked) return show("Please confirm you understand the auction is unconditional.");
     if (msg) msg.hidden = true;
     var btn = form.querySelector("button[type=submit]");
@@ -202,6 +241,11 @@ document.querySelectorAll("form.ri-form").forEach(function (form) {
         suburb: val("ri_suburb"), postcode: val("ri_postcode"),
         listing: form.getAttribute("data-listing") || "",
         finance_status: val("ri_finance_status"),
+        buyer_type: val("ri_buyer_type"),
+        selling_first: val("ri_selling_first"),
+        pest_status: val("ri_pest_status"),
+        solicitor_ready: val("ri_solicitor_ready"),
+        bidding_for: val("ri_bidding_for"),
         unconditional_ack: form.ri_unconditional_ack ? form.ri_unconditional_ack.checked : false,
         company: form.company ? form.company.value : ""
       })
