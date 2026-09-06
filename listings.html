@@ -284,7 +284,7 @@ style="grid-column:1 / -1;height:52px;border:0;border-radius:2px;background:#B99
 <div>
 <p style="margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B99A50;">Register your interest</p>
 <h3 style="margin:0 0 6px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(24px,2.6vw,30px);color:#fff;line-height:1.15;">17 Elysium Road, Rochedale South</h3>
-<p style="margin:0 0 12px;font-size:15px;line-height:1.55;color:#D8D0BE;">Auction on site 2:00pm, Saturday 17 October. Leave your details for the price guide, the open home times and the full bidder information pack.</p>
+<p style="margin:0 0 12px;font-size:15px;line-height:1.55;color:#D8D0BE;">17 Elysium Road is selling by unconditional auction on site, 2:00pm Saturday 17 October &mdash; contracts cannot include finance, building or pest conditions. Register below and let us know where you're at with finance, and we'll send the price guide, open home times and the full bidder information pack.</p>
 <p style="margin:0;font-size:13px;color:#8E97AC;">Your details come straight to Greg Leigh &mdash; no third parties, no spam.</p>
 </div>
 <form class="ri-form" data-listing="17 Elysium Road, Rochedale South" novalidate
@@ -301,11 +301,23 @@ style="height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-
 style="height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;" />
 <input type="text" name="ri_postcode" placeholder="Postcode" autocomplete="postal-code" inputmode="numeric" required
 style="height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;" />
+<select name="ri_finance_status" required
+style="grid-column:1 / -1;height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.25);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-size:16px;">
+<option value="" disabled selected style="color:#172849;">How is your finance placed?</option>
+<option value="cash" style="color:#172849;">Cash buyer &mdash; no finance required</option>
+<option value="preapproved" style="color:#172849;">Finance pre-approved</option>
+<option value="in_progress" style="color:#172849;">Finance application in progress</option>
+<option value="not_started" style="color:#172849;">Haven't started finance yet</option>
+</select>
+<label style="grid-column:1 / -1;display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;color:#D8D0BE;cursor:pointer;">
+<input type="checkbox" name="ri_unconditional_ack" required style="margin-top:3px;width:16px;height:16px;flex-shrink:0;" />
+<span>I understand 17 Elysium Road is selling via unconditional auction &mdash; no finance, building or pest conditions can be included in a bid.</span>
+</label>
 <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0;" />
 <p class="ri-msg" hidden style="grid-column:1 / -1;margin:0;font-size:14px;color:#F0C9A0;"></p>
 <button type="submit" class="btn"
 style="grid-column:1 / -1;height:52px;border:0;border-radius:2px;background:#B99A50;color:#172849;font-size:16px;font-weight:700;cursor:pointer;">Register my interest</button>
-<p style="grid-column:1 / -1;margin:0;font-size:12px;line-height:1.5;color:#8E97AC;">By registering you agree to be contacted about this property. Details are never shared.</p>
+<p style="grid-column:1 / -1;margin:0;font-size:12px;line-height:1.5;color:#8E97AC;">This registers your interest with Greg &mdash; formal bidder registration is completed with the auctioneer on the day. Details are never shared.</p>
 </form>
 </div>
 </article>
@@ -405,6 +417,8 @@ document.querySelectorAll("form.ri-form").forEach(function (form) {
     if (!val("ri_first_name") || !val("ri_last_name")) return show("Please add your first and last name.");
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return show("Please enter a valid email address.");
     if (phone.replace(/\D/g, "").length < 8) return show("Please enter a valid mobile number.");
+    if (form.ri_finance_status && !val("ri_finance_status")) return show("Please let us know how your finance is placed.");
+    if (form.ri_unconditional_ack && !form.ri_unconditional_ack.checked) return show("Please confirm you understand the auction is unconditional.");
     if (msg) msg.hidden = true;
     var btn = form.querySelector("button[type=submit]");
     var btnText = btn ? btn.textContent : "";
@@ -417,6 +431,8 @@ document.querySelectorAll("form.ri-form").forEach(function (form) {
         email: email, phone: phone,
         suburb: val("ri_suburb"), postcode: val("ri_postcode"),
         listing: form.getAttribute("data-listing") || "",
+        finance_status: val("ri_finance_status"),
+        unconditional_ack: form.ri_unconditional_ack ? form.ri_unconditional_ack.checked : false,
         company: form.company ? form.company.value : ""
       })
     })
