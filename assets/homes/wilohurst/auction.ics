@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Queensland Sotheby's International Realty//Auction//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Australia/Brisbane
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+1000
+TZOFFSETTO:+1000
+TZNAME:AEST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:auction-9-wilohurst-drive-20261010@gregleighproperty.com.au
+DTSTAMP:20260907T000000Z
+DTSTART;TZID=Australia/Brisbane:20261010T113000
+DTEND;TZID=Australia/Brisbane:20261010T123000
+SUMMARY:Auction - 9 Wilohurst Drive\, Redland Bay
+LOCATION:9 Wilohurst Drive\, Redland Bay QLD 4165
+DESCRIPTION:On-site auction. Bidder registration from 11:00am. Full listing: https://gregleighproperty.com.au/9-wilohurst-drive
+URL:https://gregleighproperty.com.au/9-wilohurst-drive
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Auction tomorrow - 9 Wilohurst Drive
+END:VALARM
+END:VEVENT
+END:VCALENDAR
