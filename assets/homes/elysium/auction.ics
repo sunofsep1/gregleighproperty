@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Queensland Sotheby's International Realty//Auction//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:auction-17-elysium-20261010@gregleighproperty.com.au
+DTSTAMP:20260925T110000Z
+DTSTART;TZID=Australia/Brisbane:20261010T113000
+DTEND;TZID=Australia/Brisbane:20261010T130000
+SUMMARY:Auction: 17 Elysium Road, Rochedale South (registrations from 11:30am)
+LOCATION:17 Elysium Road, Rochedale South QLD 4123
+DESCRIPTION:On-site auction, Saturday 10 October 2026. Registrations open 11:30am, auction 12:00pm. Final open home 11:00-11:30am. Greg Leigh, Queensland Sotheby's International Realty, 0466 805 992.
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Auction tomorrow - 17 Elysium Road
+END:VALARM
+END:VEVENT
+END:VCALENDAR
