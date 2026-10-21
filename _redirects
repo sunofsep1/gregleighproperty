@@ -1,0 +1,3 @@
+# Social caption short links: /p/<slug> -> social-shortlink edge function,
+# which 302s to the listing (currently the listings index).
+/p/*  https://sujyalrzbubvhpkntwja.supabase.co/functions/v1/social-shortlink/:splat  200
