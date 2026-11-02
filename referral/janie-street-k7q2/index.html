@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>66 Janie Street, Aspley · Referral Brief · Greg Leigh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: a private property dossier. Navy cover with the key figures, then a label rail on the left
+   and the detail on the right. Materials as a photo board; Clayfield as its own chapter. */
+:root {
+  --navy: #0e2140;
+  --navy-2: #16294b;
+  --gold: #b08d3f;
+  --gold-text: #8a6a1f;
+  --stone: #f6f3ed;
+  --paper: #ffffff;
+  --ink: #1c2230;
+  --body: #3d4352;
+  --muted: #747a87;
+  --rule: #e6e0d4;
+  --display: "Cormorant Garamond", Georgia, serif;
+  --text: "Jost", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--body); font-family: var(--text); font-weight: 400; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--navy); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; color: var(--navy); margin: 0; line-height: 1.1; text-wrap: balance; }
+p, ul, ol, dl, dd, figure { margin: 0; }
+b, strong { font-weight: 600; color: var(--ink); }
+a { color: var(--navy); text-decoration-color: var(--gold); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-text); }
+.small { font-size: 13px; color: var(--muted); }
+
+/* ---------- Cover ---------- */
+.cover { background: var(--navy); color: #fff; }
+.cover .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px 56px; padding-block: 52px 44px; align-items: end; }
+.cover .eyebrow { color: var(--gold); }
+.cover h1 { color: #fff; font-weight: 400; font-size: clamp(40px, 6.4vw, 68px); line-height: 1; margin-top: 14px; }
+.cover h1 em { font-style: italic; color: #d9c79b; }
+.cover .who { margin-top: 22px; display: flex; flex-direction: column; gap: 3px; font-size: 14px; color: #b9c1d1; }
+.cover .who b { color: #fff; font-weight: 500; }
+.figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(176,141,63,.6); }
+.figs div { padding: 16px 0 14px; border-bottom: 1px solid rgba(255,255,255,.12); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.figs div:nth-child(odd) { padding-right: 18px; border-right: 1px solid rgba(255,255,255,.12); }
+.figs div:nth-child(even) { padding-left: 18px; }
+.figs b { font-family: var(--display); font-weight: 400; font-size: 38px; line-height: 1; color: #fff; }
+.figs span { font-size: 12.5px; color: #aab3c5; }
+.bar { background: var(--gold); color: var(--navy); }
+.bar .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding-block: 11px; font-size: 13px; font-weight: 500; letter-spacing: .04em; }
+.bar b { color: var(--navy); }
+
+/* ---------- Nav ---------- */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--rule); }
+.nav .wrap { overflow-x: auto; scrollbar-width: none; }
+.nav ol { list-style: none; padding: 0; margin: 0; display: flex; gap: 26px; white-space: nowrap; }
+.nav a { display: inline-block; padding-block: 13px; text-decoration: none; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.nav a span { color: var(--gold-text); margin-right: 6px; font-weight: 600; }
+.nav a:hover { color: var(--navy); }
+
+/* ---------- Sections ---------- */
+main { padding-block: 56px 72px; display: flex; flex-direction: column; gap: 64px; }
+.sec { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 36px; scroll-margin-top: 60px; }
+.rail { display: flex; flex-direction: column; gap: 8px; padding-top: 4px; border-top: 2px solid var(--navy); }
+.rail .n { font-family: var(--display); font-size: 40px; line-height: 1; color: var(--gold); margin-top: 10px; }
+.rail h2 { font-size: 26px; }
+.rail p.small { margin-top: 4px; }
+.body { display: flex; flex-direction: column; gap: 22px; min-width: 0; border-top: 1px solid var(--rule); padding-top: 18px; }
+.body h3 { font-size: 21px; }
+.lead { font-size: 16.5px; color: var(--ink); max-width: 64ch; line-height: 1.55; }
+
+/* Spec lists */
+.spec { display: grid; grid-template-columns: 170px minmax(0, 1fr); border-top: 1px solid var(--rule); }
+.spec dt, .spec dd { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.spec dt { font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); padding-right: 16px; padding-top: 12px; }
+.spec dd { color: var(--body); min-width: 0; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 36px; }
+.grid2 > div { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+
+/* Referral terms */
+.terms { display: grid; grid-template-columns: 190px minmax(0, 1fr); background: var(--stone); }
+.terms .pct { background: var(--navy); color: #fff; padding: 22px 22px; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+.terms .pct .eyebrow { color: var(--gold); }
+.terms .pct b { font-family: var(--display); font-weight: 400; font-size: 64px; line-height: .95; color: #fff; }
+.terms .pct span { font-size: 12.5px; color: #aab3c5; }
+.terms .spec { border-top: none; padding: 6px 22px; }
+.terms .spec dt:last-of-type, .terms .spec dd:last-of-type { border-bottom: none; }
+
+/* Quotes */
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+blockquote { margin: 0; padding: 14px 18px; background: var(--stone); border-left: 2px solid var(--gold); font-family: var(--display); font-style: italic; font-size: 20px; line-height: 1.3; color: var(--navy); }
+blockquote cite { display: block; margin-top: 6px; font-family: var(--text); font-style: normal; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+/* Zones */
+.zones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.zone { border: 1px solid var(--rule); padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 6px; }
+.zone h3 { font-size: 22px; font-style: italic; font-weight: 400; }
+.zone p:last-child { font-size: 14px; }
+
+/* Materials board */
+.board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 22px; }
+.card { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card figure { position: relative; aspect-ratio: 4 / 3; max-width: 100%; overflow: hidden; background: var(--stone); }
+.card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card figcaption { position: absolute; left: 0; bottom: 0; background: rgba(14,33,64,.86); color: #fff; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; padding: 5px 9px; }
+.card h3 { font-size: 21px; }
+.card .where { font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-text); }
+.card p { font-size: 14px; }
+.card .src { font-size: 12.5px; color: var(--muted); }
+.card.wide { grid-column: span 2; }
+.card.wide figure { aspect-ratio: 8 / 3; }
+.chips { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.grid2 .spec { grid-template-columns: 120px minmax(0, 1fr); }
+.chip { display: flex; gap: 12px; align-items: center; border: 1px solid var(--rule); padding: 8px; min-width: 0; }
+.chip i { width: 46px; height: 46px; flex: none; display: block; }
+.chip b { display: block; font-size: 14px; }
+.chip span { font-size: 12.5px; color: var(--muted); }
+.c-mangrove { background: linear-gradient(160deg, #66745a, #4c583f); }
+.c-rosewood { background: repeating-linear-gradient(90deg, #7d402b 0 9px, #8c4b33 9px 10px, #6c3524 10px 18px, #9d6642 18px 22px); }
+.c-duck { background: linear-gradient(160deg, #efeadf, #e2dccd); box-shadow: inset 0 0 0 1px var(--rule); }
+.c-charcoal { background: linear-gradient(135deg, #48494c, #2e2f32); }
+.note { font-size: 12.5px; color: var(--muted); }
+
+/* Price comparison */
+.vs { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(0, 1fr); border-top: 1px solid var(--navy); }
+.vs > div { padding: 11px 14px 11px 0; border-bottom: 1px solid var(--rule); min-width: 0; font-size: 14.5px; }
+.vs .h { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-text); padding-block: 10px; }
+.vs .k { font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); padding-top: 13px; }
+.vs .t { color: var(--ink); }
+.vs .hl { background: var(--stone); }
+
+/* Timeline */
+.dated { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+.row { display: grid; grid-template-columns: 170px minmax(0, 1fr) 90px; gap: 20px; padding-block: 13px; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.date { display: flex; flex-direction: column; gap: 1px; padding-right: 16px; border-right: 1px solid var(--rule); }
+.date .wd { font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); }
+.date .dt { font-family: var(--display); font-size: 21px; font-weight: 500; color: var(--navy); line-height: 1.15; }
+.row .who { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: right; }
+
+ol.check { padding-left: 20px; columns: 2; column-gap: 36px; }
+ol.check li { padding: 3px 0; break-inside: avoid; }
+
+/* ---------- Clayfield chapter ---------- */
+.chapter { background: var(--stone); border-top: 3px solid var(--gold); }
+.chapter-head { background: var(--navy); color: #fff; }
+.chapter-head .wrap { padding-block: 34px 30px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 40px; align-items: end; }
+.chapter-head .eyebrow { color: var(--gold); }
+.chapter-head h2 { color: #fff; font-weight: 400; font-size: clamp(32px, 4.6vw, 48px); margin-top: 10px; }
+.chapter-head .when { text-align: right; display: flex; flex-direction: column; gap: 2px; }
+.chapter-head .when .wd { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.chapter-head .when .dt { font-family: var(--display); font-size: 30px; color: #fff; line-height: 1.05; }
+.chapter-head .when .tm { font-size: 13px; color: #aab3c5; }
+.chapter main { padding-block: 40px 56px; gap: 48px; }
+.invite { background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--gold); padding: 16px 20px; font-size: 16px; color: var(--ink); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--paper); border: 1px solid var(--rule); }
+.stats div { padding: 14px 16px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.stats div:last-child { border-right: none; }
+.stats b { font-family: var(--display); font-weight: 500; font-size: 28px; color: var(--navy); line-height: 1.1; }
+.stats span { font-size: 12px; color: var(--muted); }
+.chapter .spec dd, .chapter .spec dt { border-color: #ddd6c8; }
+.tbl { overflow-x: auto; background: var(--paper); border: 1px solid var(--rule); }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+thead th { font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); border-bottom: 1px solid var(--navy); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.frame td { background: #fbf7ec; }
+tr.frame td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
+td small { color: var(--muted); font-size: 11.5px; margin-left: 4px; }
+
+/* ---------- Footer ---------- */
+footer.end { background: var(--navy); color: #aab3c5; border-top: 3px solid var(--gold); }
+footer.end .wrap { padding-block: 26px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; font-size: 14px; align-items: end; }
+footer.end b { display: block; font-family: var(--display); font-weight: 400; font-size: 26px; color: #fff; }
+footer.end span { user-select: text; color: #fff; }
+
+@media (max-width: 860px) {
+  .cover .wrap { grid-template-columns: 1fr; padding-block: 40px 32px; }
+  .sec { grid-template-columns: 1fr; gap: 14px; }
+  .rail { flex-direction: row; align-items: baseline; gap: 12px; }
+  .rail .n { font-size: 30px; margin-top: 8px; }
+  .rail p.small { display: none; }
+  .grid2, .quotes { grid-template-columns: 1fr; }
+  .zones { grid-template-columns: 1fr; }
+  .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .terms { grid-template-columns: 1fr; }
+  .vs { grid-template-columns: 1fr 1fr; }
+  .vs .k { grid-column: 1 / -1; border-bottom: none; padding-bottom: 0; }
+  .vs .corner { display: none; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats div:nth-child(2) { border-right: none; }
+  .stats div:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  .chapter-head .wrap { grid-template-columns: 1fr; }
+  .chapter-head .when { text-align: left; }
+  ol.check { columns: 1; }
+}
+@media (max-width: 560px) {
+  .board { grid-template-columns: 1fr; }
+  .card.wide { grid-column: auto; }
+  .card.wide figure { aspect-ratio: 4 / 3; }
+  .spec { grid-template-columns: 1fr; }
+  .spec dt { border-bottom: none; padding-bottom: 0; }
+  .row { grid-template-columns: 120px minmax(0, 1fr); }
+  .row .who { grid-column: 2; text-align: left; }
+  .figs b { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+<!-- Cover -->
+<header class="cover">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Referral brief · Prepared for Gabrielle Baker</p>
+      <h1>66 Janie Street,<br><em>Aspley</em></h1>
+      <div class="who">
+        <span>From <b>Greg Leigh</b>, Senior Sales Executive</span>
+        <span>Prepared Monday 2 November 2026 · from my walkthrough with Tom on Monday 26 October</span>
+      </div>
+    </div>
+    <div class="figs">
+      <div><b>5</b><span>Bedrooms, incl. downstairs bed / office</span></div>
+      <div><b>3</b><span>Bathrooms, incl. ensuite</span></div>
+      <div><b>2</b><span>Kitchens, one per level</span></div>
+      <div><b>$2.5m+</b><span>Tom’s target · “three would be great”</span></div>
+    </div>
+  </div>
+  <div class="bar"><div class="wrap"><span>Two referrals: <b>66 Janie Street, Aspley</b> and <b>1/35 Miles Street, Clayfield</b></span><span>Prepared by Greg Leigh</span></div></div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap"><ol>
+    <li><a href="#referral"><span>01</span>Referral</a></li>
+    <li><a href="#tom"><span>02</span>Tom &amp; the design</a></li>
+    <li><a href="#materials"><span>03</span>Materials</a></li>
+    <li><a href="#rooms"><span>04</span>Room by room</a></li>
+    <li><a href="#build"><span>05</span>Construction</a></li>
+    <li><a href="#sale"><span>06</span>Price &amp; sale</a></li>
+    <li><a href="#timeline"><span>07</span>Timeline</a></li>
+    <li><a href="#clayfield"><span>08</span>Clayfield</a></li>
+  </ol></div>
+</nav>
+
+<main class="wrap">
+
+  <!-- 01 -->
+  <section class="sec" id="referral">
+    <div class="rail"><p class="n">01</p><h2>The referral</h2></div>
+    <div class="body">
+      <p class="lead">I’ve known Tom Taylor for over five years. He is renovating this home himself as owner-builder and makes the steel, doors and joinery throughout. Aspley sits outside my Redlands patch, so I’d like to refer it to you.</p>
+      <div>
+        <dl class="spec">
+          <dt>Introduction</dt><dd>I introduce you to Tom directly</dd>
+          <dt>Fee quoted</dt><dd>2.5% + GST (2.75% incl. GST). I told Tom we normally charge 3%. He accepted it.</dd>
+          <dt>Status</dt><dd>Not listed with anyone. Tom says he has spoken to a few agents, including Matt at Ray White.</dd>
+          <dt>Referral</dt><dd>20% of the commission on settlement, for both referrals, under a written referral agreement</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="sec" id="tom">
+    <div class="rail"><p class="n">02</p><h2>Tom &amp; the design</h2></div>
+    <div class="body">
+      <div class="grid2">
+        <div>
+          <p class="eyebrow">The owner</p>
+          <dl class="spec">
+            <dt>Owned</dt><dd>Since 2016</dd>
+            <dt>Trade</dt><dd>54 years. Company: <b>Take On</b></dd>
+            <dt>Training</dt><dd>Apprenticeship with a German builder on a 20,000-acre property west of Roma. Five and a half years of TAFE in the applied science of building. Later worked for architects.</dd>
+            <dt>Past work</dt><dd>Published internationally, starting with a large rural farmhouse. 34 Sussex Street, West End is all handmade, including the stairs.</dd>
+            <dt>On this job</dt><dd>On site six or seven days a week. Designed it himself with no architect.</dd>
+          </dl>
+        </div>
+        <div>
+          <p class="eyebrow">In his words</p>
+          <div class="quotes" style="grid-template-columns:1fr">
+            <blockquote>I let the material do the talking. Not the bling.<cite>Tom · 26 October</cite></blockquote>
+            <blockquote>Probably one of the best finishes on the Northside of Brisbane.<cite>Tom · 26 October</cite></blockquote>
+            <blockquote>There’s not gonna be two.<cite>Tom · 26 October</cite></blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="zones">
+        <div class="zone"><p class="eyebrow">Downstairs</p><h3>Industrial / brutalist</h3><p>Rough-sawn timber with steel and visible bolts. Tom calls the finishes “agricultural” but high-end.</p></div>
+        <div class="zone"><p class="eyebrow">Middle zone</p><h3>Architectural minimalist</h3><p>Which rooms make up this zone wasn’t stated on the day.</p></div>
+        <div class="zone"><p class="eyebrow">Upstairs</p><h3>Heritage</h3><p>White Duck walls, wider sills, ripple-glass doors. A new steel beam in the open area, which Tom calls a “regional loft”.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="sec" id="materials">
+    <div class="rail"><p class="n">03</p><h2>Materials &amp; finishes</h2><p class="small">Photos are online examples of the same or similar materials, not Tom’s home.</p></div>
+    <div class="body">
+      <div class="board">
+        <article class="card wide">
+          <figure><img src="img/ceppo.jpg" alt="Ceppo Siciliano, a Sicilian conglomerate stone with stones set through it"><figcaption>Possible match · Ceppo Siciliano</figcaption></figure>
+          <p class="where">Main bathroom · appears to be the vanity</p>
+          <h3>Sicilian stone with river rock trapped in it</h3>
+          <p>Tom’s words: “This is stone from Sicily. It is actually lava that ran down a creek bed, and it encapsulated the river rock. Then they cut it and slabbed it.” A stone supplier once told him it was man-made. Tom says it is natural.</p>
+          <p class="src">Examples: <a href="https://arcsurfaces.com/live-inventory/ceppo-siciliano/142168/">Ceppo Siciliano ↗</a> · <a href="https://www.detail.de/de_en/oberflachen-aus-lavastein">Etna lava stone ↗</a> · Name to confirm with Tom</p>
+        </article>
+        <article class="card">
+          <figure><img src="img/lava.jpg" alt="Raw Etna lava stone with finished samples"><figcaption>Etna lava stone</figcaption></figure>
+          <p class="where">Reference</p>
+          <h3>Sicilian lava</h3>
+          <p>The volcanic stone that holds the river rock in Tom’s slab.</p>
+        </article>
+        <article class="card">
+          <figure><img src="img/quartzite.jpg" alt="Golden Macaubas quartzite slab"><figcaption>Example · Golden Macaubas</figcaption></figure>
+          <p class="where">Upstairs kitchen · benchtops, island, bar</p>
+          <h3>Brazilian quartzite</h3>
+          <p>Tom calls it “Masuku”. He bought it in Sydney and shipped it up. It runs around the kitchen with a stone bridge shelf. The cabinet sheets are a lighter gold to match.</p>
+          <p class="src"><a href="https://in2stone.co.uk/products/quartzite/golden-macaubas-quartzite">Closest named stone ↗</a> · Name to confirm</p>
+        </article>
+        <article class="card">
+          <figure><img src="img/vzug.jpg" alt="V-Zug V6000 FullFlex induction cooktop"><figcaption>Example · V-Zug FullFlex</figcaption></figure>
+          <p class="where">Upstairs kitchen</p>
+          <h3>V-Zug appliances</h3>
+          <p>Flexi Zone induction hob, V-Zug extraction that links to the hob, and a V-Zug dishwasher. The fridge and oven tower are charcoal.</p>
+          <p class="src"><a href="https://www.winnings.com.au/p/vzug-90cm-v6000-fullflex-induction-cooktop-3113400005kit">V6000 FullFlex ↗</a> · Models not stated</p>
+        </article>
+        <article class="card">
+          <figure><img src="img/copper.jpg" alt="Patinated copper feature panel"><figcaption>Example · patinated copper</figcaption></figure>
+          <p class="where">Breakfast-bar front</p>
+          <h3>Patinated copper</h3>
+          <p>Copper on laminate, which Tom said is “one of four pieces in Australia”. It sits under New Guinea rosewood battens, lit by an RGBW strip in a 45° casing.</p>
+          <p class="src"><a href="https://www.andrewnebbettdesigns.co.uk/patinated-copper-decorative-wall-panels">Example ↗</a></p>
+        </article>
+        <article class="card">
+          <figure><img src="img/blackwood.jpg" alt="Kitchen with Tasmanian timber joinery"><figcaption>Example · Tasmanian timber</figcaption></figure>
+          <p class="where">Downstairs kitchen</p>
+          <h3>Tasmanian blackwood</h3>
+          <p>Shipped from Melbourne. White drawers with blackwood, no handles, grain matched across three shapes.</p>
+          <p class="src"><a href="https://tasmaniantimber.com.au/stories/rustic-but-refined-tasmanian-timber-brings-a-bushy-luxury-to-these-queensland-homes/">Example ↗</a></p>
+        </article>
+        <article class="card">
+          <figure><img src="img/noce.jpg" alt="Noce travertine-look porcelain tiles"><figcaption>Example · Noce porcelain</figcaption></figure>
+          <p class="where">Entry &amp; laundry floors</p>
+          <h3>“Noce” travertine-look porcelain</h3>
+          <p>A coffee/mocha tone, $25/m² from a northern NSW importer who was closing down. The entry is laid at 45° with a border, all mitred with no trims.</p>
+          <p class="src"><a href="https://tileking.ae/products/serpegiante-noce-porcelain-tile-with-travertine-effect-60x120-cm">Example ↗</a></p>
+        </article>
+        <article class="card">
+          <p class="where">Palette</p>
+          <h3>Colours &amp; timbers</h3>
+          <div class="chips">
+            <div class="chip"><i class="c-rosewood"></i><div><b>New Guinea rosewood</b><span>Battens, exterior, front door</span></div></div>
+            <div class="chip"><i class="c-mangrove"></i><div><b>Mangrove green</b><span>Exterior, with blacks</span></div></div>
+            <div class="chip"><i class="c-charcoal"></i><div><b>Charcoal</b><span>Fridge &amp; oven tower</span></div></div>
+            <div class="chip"><i class="c-duck"></i><div><b>White Duck</b><span>Upstairs walls</span></div></div>
+          </div>
+          <p class="note">Impressions, not colour-matched.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="sec" id="rooms">
+    <div class="rail"><p class="n">04</p><h2>Room by room</h2></div>
+    <div class="body">
+      <div class="grid2">
+        <div>
+          <h3>Upstairs kitchen</h3>
+          <dl class="spec">
+            <dt>Layout</dt><dd>Fridge and oven tower on one wall. Island wall to wall, with a stone breakfast bar.</dd>
+            <dt>Handles</dt><dd>The only handles in any cupboard (apart from the wardrobes): Tom’s own 40 mm pipe, quadrant-cut, at bench height</dd>
+            <dt>Storage</dt><dd>Pantry plus two pantry drawers. An 800 mm unit with a mesh back for hanging pots and adjustable shelves. Two large wire drawers.</dd>
+            <dt>Structure</dt><dd>New steel beam in the open area</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Downstairs living</h3>
+          <dl class="spec">
+            <dt>Kitchen</dt><dd>Built-in pantry, open shelving, overheads, Tasmanian blackwood</dd>
+            <dt>Bed / office</dt><dd>Built-in wardrobe, handmade ripple-glass door</dd>
+            <dt>Laundry</dt><dd>Large laundry. Noce porcelain, sandblasted soft-close glass door.</dd>
+            <dt>Dual living</dt><dd>A kitchen on each level, so it could suit two families or several generations. Tom: “It could be.”</dd>
+            <dt>Access</dt><dd>Tom says the level is built to livable-housing standard</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Bedrooms &amp; robes</h3>
+          <dl class="spec">
+            <dt>Upstairs</dt><dd>Three bedrooms, all with balcony access and built-ins, one on the street side. Balcony doors being swapped to keep the weather out.</dd>
+            <dt>Master robe</dt><dd>Walk-in robe built as one monolithic piece and rolled in on steel rods. Adjustable shelving, hanging, drawers.</dd>
+            <dt>Comfort</dt><dd>Zoned ducted air, ceiling fans, beige curtains with a hint of grey</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Bathrooms</h3>
+          <dl class="spec">
+            <dt>Main</dt><dd>Bath, shower and toilet. Sicilian stone. Tom calls it “the pièce de résistance”.</dd>
+            <dt>Vanity</dt><dd>Bespoke timber vanity with glass shelves behind the doors, LED backlit above and below</dd>
+            <dt>Ensuite</dt><dd>“The same but different”: small-tile splashback, textured base. Tom says people tell him it’s like “a seven-star hotel in Beijing”.</dd>
+            <dt>Floor</dt><dd>50–60 mm of concrete on cut-down joists with steel, nil-step entry</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Floors, doors &amp; hardware</h3>
+          <dl class="spec">
+            <dt>Floors</dt><dd>Acoustic-backed vinyl on both levels and the stairs. Noce porcelain in the entry and laundry. Carpet in part of the upstairs.</dd>
+            <dt>Doors</dt><dd>All handmade: ripple and sandblasted glass. Front doors with no top or bottom rail and a 3° taper.</dd>
+            <dt>Niche slider</dt><dd>Tom’s 2005 design that folds into a niche in the wall. Centor (to confirm) want to see it.</dd>
+            <dt>Hardware</dt><dd>Commercial mortise locks, traditional hinges, mitred jambs</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Outside &amp; location</h3>
+          <dl class="spec">
+            <dt>Deck</dt><dd>New 5 × 5 m deck, roofed into the main roof. The stairs move to the front.</dd>
+            <dt>Exterior</dt><dd>Mangrove green, blacks, New Guinea rosewood. Tom’s own steel handrails.</dd>
+            <dt>Position</dt><dd>Quiet side of the street at a T-intersection dead end, no through traffic</dd>
+            <dt>Nearby</dt><dd>The Prince Charles Hospital. High-frequency bus on the next road over. Tom says many surgeons live in the area.</dd>
+            <dt>Garage</dt><dd>Not confirmed. Tom will send exterior photos.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="sec" id="build">
+    <div class="rail"><p class="n">05</p><h2>Construction &amp; services</h2></div>
+    <div class="body">
+      <dl class="spec">
+        <dt>Sub-floor</dt><dd>Original bearers milled and reused as blocking between the joists. Structural steel welded and jacked into place.</dd>
+        <dt>Termites</dt><dd>H3 treatment throughout (Tom’s wording “H3 oil”, to confirm)</dd>
+        <dt>Roof insulation</dt><dd>R4 on the joists plus about 30 mm under the rafters, leaving a void between them. Tom says the roof space stays cool at midday and that this is his own method.</dd>
+        <dt>Walls</dt><dd>New insulation around the whole house</dd>
+        <dt>Climate</dt><dd>Upstairs: zoned ducted air (exposed duct) and ceiling fans. Downstairs: three-zone split system.</dd>
+        <dt>Lighting</dt><dd>CRI 95+ LED in key rooms (most downlights are about 80). LED strips in 45° casings.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="sec" id="sale">
+    <div class="rail"><p class="n">06</p><h2>Price &amp; sale</h2><p class="small">What Tom said, next to what I said, on 26 October.</p></div>
+    <div class="body">
+      <div class="vs">
+        <div class="h corner"></div><div class="h">Tom</div><div class="h">Me</div>
+        <div class="k">Price</div><div class="t">$2.5m. “If I could squeeze three, I’d happily take it.” He rejected $2.2m.</div><div>$2.2m–$2.5m; whether it gets a 3 in front is “to be seen”. Looking for qualified buyers at $2.5m+.</div>
+        <div class="k">Market</div><div class="t">“If you had this in New Farm, you’d write your own cheque.” An older house nearby is about $1.7m.</div><div>Aspley is a premium market. Top-end 4–5 bed homes average around $1.5–1.6m. Its median passed $1m only two or three years ago.</div>
+        <div class="k">Method</div><div class="t">Private treaty, negotiated</div><div>Agreed</div>
+        <div class="k">Viewings</div><div class="t">Evenings only</div><div>Proposed a Thursday twilight 5:30–6:30pm, plus two Saturday viewings</div>
+        <div class="k">Before completion</div><div class="t">Happy to walk qualified buyers through</div><div>Agreed</div>
+        <div class="k">Styling</div><div class="t">“It has to be.”</div><div>Rough estimate of $5.5–6k, to be confirmed with a stylist</div>
+        <div class="k">Photography</div><div class="t">Only once it’s well finished</div><div>1–2 weeks before listing</div>
+        <div class="k">Fee</div><div class="t">Accepted</div><div>2.5% + GST (2.75% incl. GST), normally 3%</div>
+        <div class="k hl">Tyson Clark</div><div class="t hl">Wants him out “sooner rather than later”</div><div class="hl">I offered to bring Tyson (QSIR principal) out</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section class="sec" id="timeline">
+    <div class="rail"><p class="n">07</p><h2>Timeline</h2></div>
+    <div class="body">
+      <div class="dated">
+        <div class="row"><div class="date"><span class="wd">Monday</span><span class="dt">26 Oct 2026</span></div><span>On-site walkthrough with Tom</span><span class="who">Greg · Tom</span></div>
+        <div class="row"><div class="date"><span class="wd">Thursday · proposed</span><span class="dt">26 Nov 2026</span></div><span>Catch-up with Tom at the property to meet you and see progress. Time to be confirmed.</span><span class="who">Greg · Tom · Gabrielle</span></div>
+        <div class="row"><div class="date"><span class="wd">By</span><span class="dt">Christmas 2026</span></div><span>All joinery and internal work finished, front door on. Externals follow.</span><span class="who">Tom</span></div>
+        <div class="row"><div class="date"><span class="wd">Approx.</span><span class="dt">March 2027</span></div><span>Complete and ready to sell</span><span class="who">Tom</span></div>
+        <div class="row"><div class="date"><span class="wd">Before launch</span><span class="dt">1–2 weeks</span></div><span>Styling and photography</span><span class="who">Agent</span></div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:8px">To confirm with Tom</p>
+        <ol class="check">
+          <li>The Sicilian stone’s name, and whether it’s the vanity or a wall</li>
+          <li>The quartzite’s name (heard as “Masuku”)</li>
+          <li>Garage, car spaces and land size</li>
+          <li>V-Zug models</li>
+          <li>Which rooms are “architectural minimalist”, and where the niche slider is</li>
+          <li>Insulation and termite treatment products</li>
+          <li>Pantry brand and hinge type</li>
+          <li>Which bathroom has the bath</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Clayfield chapter -->
+<div class="chapter" id="clayfield">
+  <div class="chapter-head">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">08 · Second referral · Listing appraisal</p>
+        <h2>1/35 Miles Street, Clayfield</h2>
+      </div>
+      <div class="when"><span class="wd">Wednesday</span><span class="dt">4 November 2026</span><span class="tm">11:00am</span></div>
+    </div>
+  </div>
+  <main class="wrap">
+    <p class="invite">If you’d like to take this one on, <b>meet me at 1/35 Miles Street at 11am on Wednesday</b> and I’ll introduce you to Luke. Just let me know you can make it.</p>
+
+    <section class="sec">
+      <div class="rail"><p class="n">A</p><h2>Luke’s plans</h2></div>
+      <div class="body">
+        <dl class="spec">
+          <dt>Owner</dt><dd>Luke Newey</dd>
+          <dt>Plan</dt><dd>Wants to upsize and move towards Burpengary / Narangba in the next three months or so</dd>
+          <dt>Other agents</dt><dd>Hasn’t spoken to any</dd>
+          <dt>Relationship</dt><dd>We’ve been talking for about six months, since the Hickory Drive sale. First contact was a realestate.com.au enquiry on 10 May 2026 about 20 Hickory Drive, Narangba. He said he was looking to buy and sell and had finance pre-approval.</dd>
+          <dt>Appointment</dt><dd>Booked 22 October 2026. Reminder sent 1 November.</dd>
+          <dt>Referral</dt><dd>20% of the commission, paid on settlement, on the same terms as Janie Street</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="rail"><p class="n">B</p><h2>The property</h2></div>
+      <div class="body">
+        <dl class="spec">
+          <dt>Title</dt><dd>Lot 1 on BUP2177 · residential unit</dd>
+          <dt>Configuration</dt><dd>3 bed · 1 bath · 153 m²</dd>
+          <dt>Guide</dt><dd>To be set at the appraisal</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="rail"><p class="n">C</p><h2>Market evidence</h2><p class="small">From my CMA booklet. Pricefinder and realestate.com.au, 1 November 2026.</p></div>
+      <div class="body">
+        <div class="stats">
+          <div><b>$1,190,000</b><span>Median of 25 priced like-for-like sales, Nov 2025 – Oct 2026</span></div>
+          <div><b>$851k – $2.045m</b><span>Range · highest 3/93 Bellevue Tce</span></div>
+          <div><b>23 days</b><span>Average time to sell</span></div>
+          <div><b>+11.8%</b><span>Clayfield units, 12 months · median $850,000</span></div>
+        </div>
+        <div class="tbl"><table>
+          <thead><tr><th>Sale</th><th>Date</th><th class="num">Distance</th><th class="num">Size</th><th>Bed·bath·car</th><th class="num">Price</th><th class="num">Days</th></tr></thead>
+          <tbody>
+            <tr><td>3/23 Christian St</td><td>21 Oct 2026</td><td class="num">389 m</td><td class="num">175 m²</td><td>3·2·2</td><td class="num">Withheld</td><td class="num">64</td></tr>
+            <tr><td>2/57 Norman Pde</td><td>28 Sep 2026</td><td class="num">1 km</td><td class="num">173 m²</td><td>3·3·2</td><td class="num">$1,380,000</td><td class="num">20</td></tr>
+            <tr><td>3/38 Stoneleigh St</td><td>6 Aug 2026</td><td class="num">634 m</td><td class="num">182 m²</td><td>3·2·1</td><td class="num">$1,325,000</td><td class="num">23</td></tr>
+            <tr><td>3/14 Norman St</td><td>3 Aug 2026</td><td class="num">1.1 km</td><td class="num">166 m²</td><td>3·3·1</td><td class="num">$1,115,000</td><td class="num">20</td></tr>
+            <tr><td>1/21 Christian St</td><td>24 Jul 2026</td><td class="num">392 m</td><td class="num">177 m²</td><td>3·2·2</td><td class="num">$1,325,000</td><td class="num">9</td></tr>
+            <tr><td>4/65 Bellevue Tce</td><td>11 May 2026</td><td class="num">317 m</td><td class="num">126 m²</td><td>3·2·1</td><td class="num">$1,100,000</td><td class="num">177</td></tr>
+            <tr><td>3/36 View St</td><td>28 Apr 2026</td><td class="num">770 m</td><td class="num">146 m²</td><td>3·2·1</td><td class="num">$1,320,000</td><td class="num">7</td></tr>
+            <tr><td>4/36 Upper Lancaster Rd</td><td>27 Apr 2026</td><td class="num">882 m</td><td class="num">150 m²</td><td>3·1·1</td><td class="num">$1,050,000</td><td class="num">54</td></tr>
+            <tr><td>3/57 Bellevue Tce</td><td>24 Apr 2026</td><td class="num">349 m</td><td class="num">152 m²</td><td>3·2·1</td><td class="num">$1,400,000</td><td class="num">15</td></tr>
+            <tr class="frame"><td>3505/35 Burdett St <small>above</small></td><td>28 Feb 2026</td><td class="num">800 m</td><td class="num">163 m²</td><td>3·2·2</td><td class="num">$1,235,000</td><td class="num">4</td></tr>
+            <tr class="frame"><td>3/5 Cromwell St <small>closest match</small></td><td>29 Jan 2026</td><td class="num">295 m</td><td class="num">115 m²</td><td>3·2·1</td><td class="num">$1,190,000</td><td class="num">16</td></tr>
+            <tr class="frame"><td>5/30 Wellington St <small>below</small></td><td>5 Dec 2025</td><td class="num">641 m</td><td class="num">125 m²</td><td>3·2·2</td><td class="num">$1,183,000</td><td class="num">1</td></tr>
+          </tbody>
+        </table></div>
+        <p class="note">The gold-marked rows are the three sales the CMA uses to frame the guide. There were no comparable homes for sale as at 1 November 2026. The full CMA booklet is available on request.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="end">
+  <div class="wrap">
+    <div><b>Greg Leigh</b>Senior Sales Executive · Queensland Sotheby’s International Realty</div>
+    <div><span>0466 805 992</span> · <span>greg.leigh@qldsir.com</span></div>
+  </div>
+</footer>
+</body>
+</html>
