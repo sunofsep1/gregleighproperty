@@ -33,3 +33,12 @@ Every "Free Appraisal" button points to your live funnel (`redlandshomevalue.com
 
 ## Go live (when you're ready)
 - New GitHub repo → Netlify (same commit-to-live flow as the funnel) → point your chosen domain (e.g. `gregleighproperty.com.au`) at it. I'll walk you through it just like last time.
+
+## Hosting (from 6 Nov 2026): Cloudflare Pages
+
+The site is published to the Cloudflare Pages project `gregleighproperty` with
+`npm run website:deploy`, run from `~/datadungeon` on the home Mac. Pushing to GitHub no longer
+publishes anything. `functions/p/` does the `/p/<slug>` short links that `_redirects` did on
+Netlify; `_headers` and `404.html` are Cloudflare's. Cloudflare Pages refuses any single file
+over 25 MiB, so compress a video before adding it (the Elysium and Wilohurst tours were
+re-encoded to fit; the originals are in git history before this commit).

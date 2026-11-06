@@ -4,3 +4,7 @@ _to_delete/
 
 # Local Netlify folder
 .netlify
+
+# Cloudflare Pages: built folder and wrangler cache
+.pages-dist/
+.wrangler/

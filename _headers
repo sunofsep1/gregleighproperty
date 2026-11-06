@@ -1,0 +1,10 @@
+# Cloudflare Pages response headers.
+/*
+  Strict-Transport-Security: max-age=31536000
+
+# Keep the pages.dev copies out of Google, so only gregleighproperty.com.au is indexed.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
