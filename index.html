@@ -29,121 +29,169 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "@id": "https://gregleighproperty.com.au/#agent",
-  "name": "Greg Leigh",
-  "description": "Licensed real estate agent with Queensland Sotheby's International Realty, selling homes across the Redlands.",
-  "url": "https://gregleighproperty.com.au/",
-  "image": "https://gregleighproperty.com.au/assets/brand/og-share.jpg",
-  "telephone": "+61466805992",
-  "email": "greg.leigh@qldsir.com",
-  "priceRange": "$$$",
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "City",
-      "name": "Cleveland"
+      "@type": "RealEstateAgent",
+      "@id": "https://gregleighproperty.com.au/#agent",
+      "name": "Greg Leigh — Queensland Sotheby's International Realty",
+      "alternateName": "Greg Leigh Property",
+      "description": "Greg Leigh is a real estate agent with Queensland Sotheby's International Realty in Cleveland, selling homes in Thornlands and Victoria Point on the Redlands Coast, Queensland.",
+      "url": "https://gregleighproperty.com.au/",
+      "image": "https://gregleighproperty.com.au/assets/greg-portrait.jpg",
+      "logo": "https://gregleighproperty.com.au/assets/brand/gl-logo-full-rev.png",
+      "telephone": "+61466805992",
+      "email": "greg.leigh@qldsir.com",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cleveland",
+        "addressRegion": "QLD",
+        "postalCode": "4163",
+        "addressCountry": "AU"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Thornlands QLD 4164",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Thornlands",
+            "addressRegion": "QLD",
+            "postalCode": "4164",
+            "addressCountry": "AU"
+          },
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Redland City, Queensland"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Victoria Point QLD 4165",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Victoria Point",
+            "addressRegion": "QLD",
+            "postalCode": "4165",
+            "addressCountry": "AU"
+          },
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Redland City, Queensland"
+          }
+        }
+      ],
+      "employee": {
+        "@id": "https://gregleighproperty.com.au/#greg"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Queensland Sotheby's International Realty",
+        "url": "https://queenslandsothebysrealty.com/"
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Free property appraisal",
+            "areaServed": [
+              "Thornlands QLD 4164",
+              "Victoria Point QLD 4165"
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Selling by private treaty",
+            "areaServed": [
+              "Thornlands QLD 4164",
+              "Victoria Point QLD 4165"
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Auction campaigns",
+            "areaServed": [
+              "Thornlands QLD 4164",
+              "Victoria Point QLD 4165"
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Off-market sales",
+            "areaServed": [
+              "Thornlands QLD 4164",
+              "Victoria Point QLD 4165"
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Investor and tenanted property sales",
+            "areaServed": [
+              "Thornlands QLD 4164",
+              "Victoria Point QLD 4165"
+            ]
+          }
+        }
+      ],
+      "subjectOf": [
+        {
+          "@type": "WebPage",
+          "url": "https://gregleighproperty.com.au/thornlands",
+          "name": "Selling in Thornlands — questions answered"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://gregleighproperty.com.au/victoria-point",
+          "name": "Selling in Victoria Point — questions answered"
+        }
+      ],
+      "sameAs": [
+        "https://www.ratemyagent.com.au/real-estate-agent/greg-leigh-ic686/sales/overview",
+        "https://queenslandsothebysrealty.com/team/greg-leigh",
+        "https://www.domain.com.au/real-estate-agent/greg-leigh-1880108",
+        "https://redlandshomevalue.com.au/"
+      ]
     },
     {
-      "@type": "City",
-      "name": "Thornlands"
-    },
-    {
-      "@type": "City",
-      "name": "Victoria Point"
-    },
-    {
-      "@type": "City",
-      "name": "Redland Bay"
-    },
-    {
-      "@type": "City",
-      "name": "Capalaba"
-    },
-    {
-      "@type": "City",
-      "name": "Alexandra Hills"
-    },
-    {
-      "@type": "City",
-      "name": "Birkdale"
-    },
-    {
-      "@type": "City",
-      "name": "Wellington Point"
-    },
-    {
-      "@type": "City",
-      "name": "Ormiston"
-    },
-    {
-      "@type": "City",
-      "name": "Thorneside"
-    },
-    {
-      "@type": "City",
-      "name": "Sheldon"
-    },
-    {
-      "@type": "City",
-      "name": "Mount Cotton"
+      "@type": "Person",
+      "@id": "https://gregleighproperty.com.au/#greg",
+      "name": "Greg Leigh",
+      "jobTitle": "Senior Sales Executive",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Queensland Sotheby's International Realty"
+      },
+      "image": "https://gregleighproperty.com.au/assets/greg-portrait.jpg",
+      "telephone": "+61466805992",
+      "email": "greg.leigh@qldsir.com",
+      "url": "https://gregleighproperty.com.au/about",
+      "knowsAbout": [
+        "Selling a home in Thornlands",
+        "Selling a home in Victoria Point",
+        "Property appraisals on the Redlands Coast",
+        "Townhouse and body corporate sales",
+        "Investor and tenanted property sales"
+      ],
+      "sameAs": [
+        "https://www.ratemyagent.com.au/real-estate-agent/greg-leigh-ic686/sales/overview",
+        "https://queenslandsothebysrealty.com/team/greg-leigh",
+        "https://www.domain.com.au/real-estate-agent/greg-leigh-1880108",
+        "https://redlandshomevalue.com.au/"
+      ]
     }
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Cleveland",
-    "addressRegion": "QLD",
-    "addressCountry": "AU"
-  },
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "Queensland Sotheby's International Realty"
-  },
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Property appraisal"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Home valuation"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Selling by private treaty"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Auction campaigns"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Off-market sales"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Investor and tenanted property sales"
-      }
-    }
-  ],
-  "sameAs": [
-    "https://redlandshomevalue.com.au/"
   ]
 }
   </script>
@@ -415,6 +463,7 @@
   <footer class="site-footer">
     <div class="footer__inner">
       <img src="assets/brand/gl-logo-full-rev.png" alt="Greg Leigh — Redlands Coast Real Estate" style="height:64px;width:auto;display:inline-block" />
+      <p class="footer__fine"><a href="thornlands">Selling in Thornlands</a> · <a href="victoria-point">Selling in Victoria Point</a></p>
       <p class="footer__fine"><a href="tel:+61466805992">0466 805 992</a> · <a href="mailto:greg.leigh@qldsir.com">greg.leigh@qldsir.com</a></p>
       <p class="footer__fine">Each office is independently owned and operated. Licensed real estate agent (QLD). <a href="https://redlandshomevalue.com.au/#privacy">Privacy policy</a> · By submitting an appraisal request you agree to be contacted about your appraisal.</p>
       <p class="footer__copy">&copy; <span id="year">2026</span> Greg Leigh. All rights reserved.</p>
